@@ -2,16 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using AlibabaCloud.SDK.VIAPI.Utils;
 using Microsoft.Win32;
 
@@ -25,25 +18,6 @@ namespace EsteLle
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        public void GenerateURL()
-        {
-            string accessKeyId = "LTAI5t9Bv7zv7WsvuCXvbYac";   // 您的AccessKeyID
-            string accessSecret = "euPYCDVgMSQwMTZgUnoYDaqDCJwKUQ";   // 您的AccessKeySecret
-            string imageUrl = PathPanel.Text;  // 上传成功后，返回上传后的文件地址
-            string result = "";
-            try 
-            { 
-                FileUtils fileobj = FileUtils.getInstance(accessKeyId, accessSecret);
-                result = fileobj.Upload(imageUrl);
-            }
-            catch(Exception e)
-            {
-                ResultPanel.Text = e.Message;
-            }
-            Console.WriteLine(result);
-            ResultPanel.Text = result;
         }
 
         private void SelectFile()
@@ -61,7 +35,6 @@ namespace EsteLle
             {
                 ResultPanel.Text = "Cannot open image, " + ex.Message;
             }
-            GenerateURL();
         }
     }
 }

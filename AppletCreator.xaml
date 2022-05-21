@@ -1,0 +1,25 @@
+﻿<Window x:Class="EsteLle.AppletCreator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EsteLle"
+        mc:Ignorable="d"
+        Title="AppletCreator" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="UserConsole" HorizontalAlignment="Center" Height="121" Margin="0,304,0,0" Text="Messages and errors will be output here." TextWrapping="Wrap" VerticalAlignment="Top" Width="780" TextChanged="TextBox_TextChanged" FontSize="16"/>
+        <Label x:Name="ConsoleLabel" Content="Console" HorizontalAlignment="Left" Margin="10,265,0,0" VerticalAlignment="Top" Height="34" Width="152" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="L1" Content="Aliyun Log In" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="34" Width="152" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="L2" Content="Acccess Key" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" Height="34" Width="152" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="L3" Content="Acccess Seccret" HorizontalAlignment="Left" Margin="10,123,0,0" VerticalAlignment="Top" Height="34" Width="152" FontSize="16" FontWeight="Bold"/>
+        <TextBox x:Name="AccessKey" HorizontalAlignment="Left" Height="35" Margin="10,83,0,0" Text="Aliyun Access Key..." TextWrapping="Wrap" VerticalAlignment="Top" Width="327" FontSize="16"/>
+        <TextBox x:Name="AccessSecret" HorizontalAlignment="Left" Height="35" Margin="10,157,0,0" Text="Aliyun Access Secret..." TextWrapping="Wrap" VerticalAlignment="Top" Width="327" FontSize="16"/>
+        <Label x:Name="L1_Copy" Content="AiSegment Log In" HorizontalAlignment="Left" Margin="463,10,0,0" VerticalAlignment="Top" Height="34" Width="152" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="L2_Copy" Content="AppKey" HorizontalAlignment="Left" Margin="463,49,0,0" VerticalAlignment="Top" Height="34" Width="152" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="L3_Copy" Content="AppSeccret" HorizontalAlignment="Left" Margin="463,123,0,0" VerticalAlignment="Top" Height="34" Width="152" FontSize="16" FontWeight="Bold"/>
+        <TextBox x:Name="AppKey" HorizontalAlignment="Left" Height="35" Margin="463,83,0,0" Text="Aliyun Marketplace AppKey..." TextWrapping="Wrap" VerticalAlignment="Top" Width="327" FontSize="16"/>
+        <TextBox x:Name="AppSecret" HorizontalAlignment="Left" Height="35" Margin="463,157,0,0" Text="Aliyun Marketplace AppSecret..." TextWrapping="Wrap" VerticalAlignment="Top" Width="327" FontSize="16"/>
+        <Button Content="Procceed" HorizontalAlignment="Left" Height="48" Margin="304,217,0,0" VerticalAlignment="Top" Width="166" FontSize="16" MouseUp="Button_MouseUp"/>
+
+    </Grid>
+</Window>
