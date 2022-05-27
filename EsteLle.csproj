@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AlibabaCloud.SDK.Imageseg20191230" Version="1.0.0" />
     <PackageReference Include="AlibabaCloud.SDK.VIAPIUtils" Version="1.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
 </Project>
