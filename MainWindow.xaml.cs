@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -15,7 +16,7 @@ namespace EsteLle
     /// </summary>
     public partial class MainWindow : Window
     {
-        private BitmapImage aisegImage, aliyunImage, aliyunSkin, aisegSkin;
+        private BitmapImage aisegImage, aliyunImage, aliyunSkin, aisegSkin, aliyunFace, aisegFace, preview;
 
         public MainWindow()
         {
@@ -188,7 +189,7 @@ namespace EsteLle
         {
             try
             {
-                BitmapImage preview = new BitmapImage();
+                preview = new BitmapImage();
                 preview.BeginInit();
                 preview.UriSource = new Uri(PathPanel.Text);
                 preview.EndInit();
@@ -229,12 +230,95 @@ namespace EsteLle
 
         private void SkinButton2_Click(object sender, RoutedEventArgs e)
         {
-            
+            try {
+                UserCentre.ClearConsole();
+
+                string name = PathPanel.Text;
+                FileInfo file = new FileInfo(name);
+                name = file.Name;
+                UserCentre.Print("Saving data of " + name + "...");
+
+                if (preview != null)
+                {
+                    UserCentre.Print("Saving preview...");
+                    UserCentre.SaveResult(preview, name, 0);
+                }
+                if(aliyunImage != null)
+                {
+                    UserCentre.Print("Saving body...");
+                    UserCentre.SaveResult(aliyunImage, name, 1);
+                }
+                if(aliyunSkin != null)
+                {
+                    UserCentre.Print("Saving skin...");
+                    UserCentre.SaveResult(aliyunSkin, name, 2);
+                }
+                if(aliyunFace != null)
+                {
+                    UserCentre.Print("Saving face...");
+                    UserCentre.SaveResult(aliyunFace, name, 3);
+                }
+
+                if (preview != null)
+                {
+                    UserCentre.Print("Exporting CSV...");
+                    UserCentre.SaveCSV(name, preview, aliyunImage, aliyunSkin, aliyunFace);
+                }
+
+                UserCentre.Print("Success");
+            }
+            catch (Exception ex)
+            {
+                UserCentre.Print("Failed to save results.\n" + ex.Message);
+            }
         }
 
         private void SkinButton3_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (AiSegmentApplet.instance == null) return;
+
+            try
+            {
+                UserCentre.ClearConsole();
+
+                string name = PathPanel.Text;
+                FileInfo file = new FileInfo(name);
+                name = file.Name;
+                UserCentre.Print("Saving data of " + name + "...");
+
+                if (preview != null)
+                {
+                    UserCentre.Print("Saving preview...");
+                    UserCentre.SaveResult(preview, name, 0);
+                }
+                if (aisegImage != null)
+                {
+                    UserCentre.Print("Saving body...");
+                    UserCentre.SaveResult(aisegImage, name, 1);
+                }
+                if (aisegSkin != null)
+                {
+                    UserCentre.Print("Saving skin...");
+                    UserCentre.SaveResult(aisegSkin, name, 2);
+                }
+                if (aisegFace != null)
+                {
+                    UserCentre.Print("Saving face...");
+                    UserCentre.SaveResult(aisegFace, name, 3);
+                }
+                
+                if(preview != null)
+                {
+                    UserCentre.Print("Exporting CSV...");
+                    UserCentre.SaveCSV(name, preview, aisegImage, aisegSkin, aisegFace);
+                }
+
+                UserCentre.Print("Success");
+            }
+            catch (Exception ex)
+            {
+                UserCentre.Print("Failed to save results.\n" + ex.Message);
+            }
         }
 
         private void CallAiSegment(string localImagePath)
@@ -340,12 +424,12 @@ namespace EsteLle
 
             if (isAliyun)
             {
-                aliyunSkin = images[0];
+                aliyunFace = images[0];
                 UpdatePreview2(images[0]);
             }
             else
             {
-                aisegSkin = images[0];
+                aisegFace = images[0];
                 UpdatePreview3(images[0]);
             }
 
