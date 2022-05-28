@@ -61,7 +61,7 @@ namespace EsteLle
             {
                 try
                 {
-                    CallAliyunFaceSegment(AliyunApplet.instance.imageUrl, true);
+                    CallAliyunFaceSegment(AliyunApplet.instance.bodySegUrl, true);
                 }
                 catch (Exception ex)
                 {

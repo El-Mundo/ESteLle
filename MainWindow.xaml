@@ -13,7 +13,7 @@
             <RowDefinition Height="195*"/>
         </Grid.RowDefinitions>
         <Button x:Name="ProcessButton" Content="Segment Body" HorizontalAlignment="Left" Margin="22,13,0,0" VerticalAlignment="Top" Height="48" Width="140" Click="Button_Click" Grid.Row="1"/>
-        <Button x:Name="FaceButton" Content="Segment Face&#xD;&#xA;(Experimental)" HorizontalAlignment="Left" Margin="22,163,0,0" VerticalAlignment="Top" Height="48" Width="140" Click="Face_Segment" Grid.Row="1"/>
+        <Button x:Name="FaceButton" Content="Segment Face" HorizontalAlignment="Left" Margin="22,163,0,0" VerticalAlignment="Top" Height="48" Width="140" Click="Face_Segment" Grid.Row="1"/>
         <Button x:Name="SkinButton" Content="Segment Skin" HorizontalAlignment="Left" Margin="22,0,0,0" VerticalAlignment="Center" Height="48" Width="140" Grid.Row="1" Click="SkinButton_Click"/>
         <Label x:Name="PathLabel" Content="Path" HorizontalAlignment="Left" Height="32" Margin="12,13,0,0" VerticalAlignment="Top" Width="52" FontFamily="Arial Black"/>
         <TextBox x:Name="PathPanel" HorizontalAlignment="Left" Height="24" Margin="74,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="600" Text="Input file path or HTTP url here..."/>
