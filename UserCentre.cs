@@ -14,6 +14,7 @@ namespace EsteLle
         private static readonly string BASE_SAVE_PATH = "/ESteLle/base",
             FACE_SAVE_PATH = "/ESteLle/face", SKIN_SAVE_PATH = "/ESteLle/skin", BODY_SAVE_PATH = "/ESteLle/body",
             CSV_PATH = "/ESteLle", CSV_NAME = "data.csv";
+        public static readonly string SECRET_PATH = "/ESteLle/secret.csv";
         private const byte ALPHA_THRESHOLD = 8, GRAYSCALE_THRESHOLD = 64;
 
         private static TextBox console;
@@ -163,7 +164,7 @@ namespace EsteLle
 
             for (int x = 0; x < image.PixelWidth; x++)
             {
-                for (int y = 0; y < image.Height; y++)
+                for (int y = 0; y < image.PixelHeight; y++)
                 {
                     int index = y * stride + 4 * x;
 
@@ -194,7 +195,7 @@ namespace EsteLle
 
             for (int x = 0; x < image.PixelWidth; x++)
             {
-                for (int y = 0; y < image.Height; y++)
+                for (int y = 0; y < image.PixelHeight; y++)
                 {
                     int index = y * stride + depth * x;
 

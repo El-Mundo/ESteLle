@@ -27,7 +27,7 @@ namespace EsteLle
         private void SelectingFile()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = "c:\\";
+            //openFileDialog.InitialDirectory = "c:\\";
             openFileDialog.Filter = "Supported Image Files(*.JPG;*.JPEG;*.PNG;*.BMP)|*.JPG;*.JPEG;*.PNG;*.BMP;*.jpg;*.jpeg;*.png;*.bmp|All files (*.*)|*.*";
             openFileDialog.FilterIndex = 1;
 
@@ -122,14 +122,14 @@ namespace EsteLle
                     {
                         throw new Exception("The selected file is not an available image!");
                     }
-                    else if(preview.Width < 32 || preview.Height < 32)
+                    /*else if(preview.Width < 32 || preview.Height < 32)
                     {
                         throw new Exception("The processed image must be larger than 32x32!");
                     }
                     else if(preview.Width > 2000 || preview.Height > 2000)
                     {
                         throw new Exception("The selected image must be smaller than 2000x2000!");
-                    }
+                    }*/
                 }
                 catch(Exception imgEx)
                 {

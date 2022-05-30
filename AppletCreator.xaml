@@ -15,9 +15,11 @@
         <TextBox x:Name="AccessKey" HorizontalAlignment="Left" Height="24" Margin="10,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="327"/>
         <TextBox x:Name="AccessSecret" HorizontalAlignment="Left" Height="24" Margin="10,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="327"/>
         <Label x:Name="L1_Copy" Content="AiSegment Log In (Optional)&#xD;&#xA;" HorizontalAlignment="Left" Margin="463,14,0,0" VerticalAlignment="Top" Height="34" Width="243" FontWeight="Bold"/>
-        <Label x:Name="L2_Copy" Content="AppCode" HorizontalAlignment="Left" Margin="463,78,0,0" VerticalAlignment="Top" Height="34" Width="152" FontWeight="Bold"/>
-        <TextBox x:Name="AppCode" HorizontalAlignment="Left" Height="24" Margin="463,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="327"/>
+        <Label x:Name="L2_Copy" Content="AppCode" HorizontalAlignment="Left" Margin="463,48,0,0" VerticalAlignment="Top" Height="34" Width="152" FontWeight="Bold"/>
+        <TextBox x:Name="AppCode" HorizontalAlignment="Left" Height="24" Margin="463,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="327"/>
         <Button x:Name="Button" Content="Procceed" HorizontalAlignment="Left" Height="41" Margin="330,187,0,0" VerticalAlignment="Top" Width="136" Click="Button_Click"/>
+        <Label x:Name="L3_Copy" Content="Aliyun OSS Bucket Name" HorizontalAlignment="Left" Margin="463,115,0,0" VerticalAlignment="Top" Height="34" Width="259" FontWeight="Bold"/>
+        <TextBox x:Name="OSSBucket" HorizontalAlignment="Left" Height="24" Margin="463,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326"/>
 
     </Grid>
 </Window>
