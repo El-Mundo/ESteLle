@@ -31,6 +31,7 @@ namespace EsteLle
                     AccessKey.Text = line[0];
                     AccessSecret.Text = line[1];
                     AppCode.Text = line[2];
+                    OSSBucket.Text = line[3];
                 }
                 catch (Exception e)
                 {
